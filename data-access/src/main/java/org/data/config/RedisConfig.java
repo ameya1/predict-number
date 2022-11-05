@@ -14,11 +14,11 @@ public class RedisConfig {
     @Autowired
     RedisParams redisParams;
 
-    /*@Bean
+    @Bean
     public JedisPooled jedisClient() {
         JedisPooled pool = new JedisPooled(redisParams.getUrl(), redisParams.getPort());
         log.info("Jedis connected " + pool.getPool().getResource().isConnected() + " at " + redisParams);
-        log.info("Ping " + pool.getPool().getResource().ping());
+        log.info("Redis ping " + pool.getPool().getResource().ping());
         return pool;
-    }*/
+    }
 }
