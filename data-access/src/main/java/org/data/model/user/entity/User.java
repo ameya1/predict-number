@@ -1,12 +1,14 @@
-package org.data.model.entity;
+package org.data.model.user.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.data.model.predict.entity.PredictGame;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Setter
@@ -16,26 +18,28 @@ import java.util.UUID;
 @Entity
 @Table(name = "users")
 public class User {
+
+    public User() {}
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     @Column(name = "user_id", nullable = false)
-    UUID userId;
+    private UUID userId;
     @Column(name = "username", nullable = false)
-    String username;
+    private String username;
 
     @Column(nullable = false)
-    String email;
+    private String email;
 
     @Column(name = "first_name", nullable = false)
-    String firstName;
+    private String firstName;
     @Column(name = "last_name", nullable = false)
-    String lastName;
+    private String lastName;
     @Column(name = "created_at", nullable = false)
-    LocalDateTime createdAt;
+    private LocalDateTime createdAt;
 
-    //@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    //List<PredictNumber> numberGames;
+    /*@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<PredictGame> numberGames;*/
 
     @Override
     public String toString() {

@@ -1,6 +1,8 @@
-package org.data.model.request;
+package org.data.model.user.request;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor

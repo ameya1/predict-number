@@ -2,8 +2,6 @@ package org.predict.controller;
 
 import lombok.extern.log4j.Log4j2;
 import org.data.model.entity.SystemHealth;
-import org.data.model.request.UserRequest;
-import org.data.model.response.UserResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
