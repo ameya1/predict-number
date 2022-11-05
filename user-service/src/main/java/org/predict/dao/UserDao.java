@@ -1,7 +1,7 @@
 package org.predict.dao;
 
 import lombok.extern.log4j.Log4j2;
-import org.data.model.entity.User;
+import org.data.model.user.entity.User;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,5 +19,9 @@ public class UserDao {
     @Transactional
     public void save(User user) {
         session.save(user);
+    }
+
+    public User get(Long id) {
+        return session.get(User.class, id);
     }
 }
