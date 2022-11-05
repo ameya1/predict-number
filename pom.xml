@@ -11,6 +11,7 @@
     <modules>
         <module>user-service</module>
         <module>data-access</module>
+        <module>predict-game</module>
     </modules>
 
     <properties>
