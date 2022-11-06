@@ -19,6 +19,12 @@ import java.util.UUID;
 @Table(name = "users")
 public class User {
 
+    public final static String KEY;
+
+    static {
+        KEY = "user:";
+    }
+
     public User() {}
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
