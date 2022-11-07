@@ -34,4 +34,14 @@ public class PredictController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
+
+    @PostMapping("/game")
+    public ResponseEntity<PredictGameResponse> predict(@RequestBody PredictGameRequest predictGameRequest) {
+        try {
+            return ResponseEntity.ok(gameService.attempt(predictGameRequest));
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            return ResponseEntity.ok(PredictGameResponse.builder().message(e.getMessage()).build());
+        }
+    }
 }

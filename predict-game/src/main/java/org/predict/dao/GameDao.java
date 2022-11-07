@@ -9,6 +9,8 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.UUID;
+
 @Log4j2
 @Repository
 public class GameDao {
@@ -34,4 +36,9 @@ public class GameDao {
             return user;
         return session.find(User.class, predictGameRequest.getUserSerialId());
     }
+
+    public PredictGame getGameById(UUID gameId) throws Exception {
+        return gameCacheDao.get(PredictGame.KEY + gameId, PredictGame.class);
+    }
+
 }
